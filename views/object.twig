@@ -1,0 +1,21 @@
+{% extends "__layout.twig" %}
+
+
+{% block content %}
+    
+<a style="margin: 30px;"> {{desciption}}</a>
+    <div style="margin-left: 305px;">
+        <ul class="nav nav-pills" style="margin-top: 25px;">
+            <li class="nav-item d-flex flex-row">
+                <a href="{{url}}/image" class="{{ is_image ? 'active' }} nav-link">Картинка</a>
+                <a href="{{url}}/info" class="{{ is_info  ? 'active' }} nav-link">Описание</a>
+            </li>
+        </ul> 
+</div>
+
+    {% block objectContent %}
+   
+    {% endblock %}
+
+
+{% endblock %}
