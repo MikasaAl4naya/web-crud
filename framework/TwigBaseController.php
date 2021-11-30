@@ -6,24 +6,7 @@ class TwigBaseController extends BaseController {
     public $template = ""; // шаблон страницы
     protected \Twig\Environment $twig;
     public $url ="";
-    public $menu = [
-        [
-            "title" => "Главная",
-            "url" => "/",
-        ],
-        [
-            "title" => "Slipknot",
-            "url" => "/Slipknot",
-    
-    
-        ],
-        [
-            "title" => "LinkinPark",
-            "url" => "/LinkinPark",
-    
-        ]
-    ];
-    
+    public $menu = [];
     public function setTwig($twig) {
         $this->twig = $twig;
     }
@@ -41,7 +24,7 @@ class TwigBaseController extends BaseController {
     }
     
     
-    public function get() {
-        echo $this->twig->render($this->template, $this->getContext());
+    public function get(array $context) { // добавил аргумент в get
+        echo $this->twig->render($this->template, $context); // а тут поменяем getContext на просто $context
     }
 }
